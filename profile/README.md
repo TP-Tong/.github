@@ -2,6 +2,8 @@
 
 **TP-Tong** is the GitHub organization for the Tong Class in PKU and THU with [**B**eijing **I**ntitute for **G**eneral **A**rtificial **I**ntelligence](https://bigai.ai/). We host our official private repos for internal discussions and sharing here.
 
+> This organization is managed by [Yuyang Li](https://blog.aidenli.net), [Yu Liu](https://github.com/Wall-Facer-liuyu) and [Guangyuan Jiang](https://jianggy.com/).
+
 ## Courses
 
 - [Directed Research in AI System (I)](https://summer.yzhu.io)
