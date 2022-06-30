@@ -4,9 +4,7 @@
 
 ### Basic Information
 
-Please check [BIGAI X THU Servers Status](https://docs.google.com/spreadsheets/d/1DVxKWAArosIoaySw1OLpoW8tsti40d-ZUBTlnYfx1ls/edit?usp=sharing) on Google Docs for information.
-
-You can only access them
+Please contact [Yuyang Li](mailto:i@aidenli.net) for the Server List Google Docs. Note that you can only access them
 
 - with BIGAI VPNs - for servers at "BIGAI 3F"
 - at Central Building Room 501 - for servers at "THU Central 501"
