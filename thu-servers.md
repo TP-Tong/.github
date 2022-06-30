@@ -1,4 +1,4 @@
-# THU BIGAI Servers 101
+# BIGAI X THU Servers 101
 
 ## Users Guide
 
