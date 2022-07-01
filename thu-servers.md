@@ -51,14 +51,53 @@ You need SSH to login to the server. You can go through this [SSH guide](https:/
 Use SSH to login to the server:
 
 ```shell
-ssh USERNAME@HOSTNAME.gpu.bigai.aidenli.net
+ssh USERNAME@HOSTNAME.gpu.t.tp-tong.xyz
 ```
 
 Note that you should change the `USERNAME` and `HOSTNAME` to your account name and the server hostname. E.g. To login to the server `snape` with account `yuyang`, use:
 
 ```shell
-ssh yuyang@snape.gpu.bigai.aidenli.net
+ssh yuyang@snape.gpu.t.tp-tong.xyz
 ```
+
+
+
+#### Cloudflared Tunnel for Remote Connection
+
+> Note that this method provides temporary access for those with no BIGAI VPNs or are out of the campus.
+>
+> Compared to other methods, tt has much higher latency.
+
+##### Installing `cloudflared`
+
+First you need to install `cloudflared`, an [open source project](https://github.com/cloudflare/cloudflared) maintained by Cloudflare for Cloudflare Tunnel. Please follow [its instructions](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/install-and-setup/installation/).
+
+##### SSH Configuration
+
+Modify your ssh configuration file (typically `~/.ssh/config`) and add:
+
+```ini
+Host *.tp-tong.xyz
+	ProxyCommand cloudflared access ssh --hostname %h
+```
+
+##### Connection with Zero-Trust Auth
+
+Then you can login to the server with SSH:
+
+```shell
+ssh USERNAME@HOSTNAME.tp-tong.xyz
+```
+
+Note that the address is slightly different.
+
+For the first time you connect to a new server, you should see something like:
+
+<img src="https://blog-img-1302618638.cos.ap-beijing.myqcloud.com/uPic/Screen%20Shot%202022-07-01%20at%2015.25.21.png" alt="Screen Shot 2022-07-01 at 15.25.21" style="zoom: 25%;" />
+
+Here's an authentication powered by Cloudflare Zero-Trust. **You should enter an e-mail address ending with `@mails.tsinghua.edu.cn` or `@bigai.ai` to receive an One-Time-Password (OTP)**. By entering the password in the next step, you get the access to the server, then ssh would work.
+
+> This authentication will expire after 24 hours.
 
 
 
@@ -89,7 +128,7 @@ Useful resources like softwares and datasets are pre-stored on the server to sav
 | Name       | Path                 | Latest Version | Reminder                                         |
 | ---------- | -------------------- | -------------- | ------------------------------------------------ |
 | Anaconda 3 | `/mnt/public/conda/` | `3-2022.05`    | Directly select and run a shell code to install. |
-| Miniconda  | `/mnt/public/conda/` | `py38_4.12.0`  |                                                  |
+| Miniconda  | `/mnt/public/conda/` | `py38_4.12.0`  | Directly select and run a shell code to install. |
 
 
 
