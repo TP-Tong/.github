@@ -1,8 +1,6 @@
 # BIGAI X THU Servers 101
 
-## Users Guide
-
-### Basic Information
+## Basic Information
 
 Please contact [Yuyang Li](mailto:i@aidenli.net) for the Server List Google Docs. Note that you can only access them
 
@@ -11,13 +9,13 @@ Please contact [Yuyang Li](mailto:i@aidenli.net) for the Server List Google Docs
 
 
 
-### Preliminaries
+## Preliminaries
 
 To make sure that you're capable of using a server for computation, it's suggested that you go through several stuffs as preliminaries. Remember that it's common to be frustrated dealing with a command line Linux, but you will master it after try-and-errors. Good luck!
 
 
 
-#### Linux
+### Linux
 
 Instead of fully learning Linux, you can just go through:
 
@@ -26,11 +24,10 @@ Instead of fully learning Linux, you can just go through:
 - [Remote Login (with PuTTY)](https://www.runoob.com/linux/linux-remote-login.html)
   - Note that you can also login with `ssh` command or other softwares like Termius and VSCode
 - [File Attributes and Permissions](https://www.runoob.com/linux/linux-file-attr-permission.html)
-- [[Vi/Vim](https://www.runoob.com/linux/linux-vim.html)](https://www.runoob.com/linux/linux-file-attr-permission.html)
+- [Vi/Vim](https://www.runoob.com/linux/linux-vim.html)
 
 
-
-#### Conda
+### Conda
 
 You should work in virtual environments to isolate packages among your projects to avoid bad dependencies. You can go through:
 
@@ -40,7 +37,7 @@ You should work in virtual environments to isolate packages among your projects 
 
 
 
-#### SSH
+### SSH
 
 You need SSH to login to the server:
 
@@ -60,11 +57,11 @@ For more information, You can go through this [SSH guide](https://wangdoc.com/ss
 
 
 
-### Login
+## Login to the Servers
 
 Of note, **using SSH keys as the login method is a must for remote login for security reasons**.
 
-#### GPU Servers in THU Central Building Room 501
+### GPU Servers in THU Central Building Room 501
 
 **It's strongly recommended to go to Room 501 to use the machines in person, where you can access not only GUI desktops, but also guidance and help from our TAs.**
 
@@ -76,11 +73,11 @@ ssh john@501.gpu.t.tp-tong.xyz -p 23333
 
 
 
-#### GPU Server in BIGAI Server Room
+### GPU Server in BIGAI Server Room
 
 We currently have 4 GPU servers in BIGAI Server Room: `snape`, `lupin`, `sirius` and `dobby`.
 
-##### Direct Connection in BIGAI Network
+#### Direct Connection in BIGAI Network
 
 When you're connected to BIGAI's network directly or via BIGAI VPN, you can directly access them with:
 
@@ -96,7 +93,7 @@ ssh john@dobby.gpu.t.tp-tong.xyz
 
 
 
-##### Cloudflared Tunnel for Remote Connection
+#### Cloudflared Tunnel for Remote Connection
 
 > Note that this method provides temporary access to GPUs in the BIGAI Server Room for those with no BIGAI VPNs. Compared to other methods, it has much higher latency and thus is not suggested.
 
