@@ -42,31 +42,63 @@ You should work in virtual environments to isolate packages among your projects 
 
 #### SSH
 
-You need SSH to login to the server. You can go through this [SSH guide](https://wangdoc.com/ssh/).
+You need SSH to login to the server:
+
+```shell
+ssh USERNAME@URL -p PORT
+```
+
+Note that you should change the `USERNAME` and `PORT` to your account name and the server port. E.g. To login to the server at `server.net` on the port `23333` with account `alice`, use:
+
+```shell
+ssh alice@server.net -p 23333
+```
+
+with `PORT` unspecified, the SSH default port `22` is used.
+
+For more information, You can go through this [SSH guide](https://wangdoc.com/ssh/).
 
 
 
 ### Login
 
-Use SSH to login to the server:
+Of note, **using SSH keys as the login method is a must for remote login for security reasons**.
+
+#### GPU Servers in THU Central Building Room 501
+
+**It's strongly recommended to go to Room 501 to use the machines in person, where you can access not only GUI desktops, but also guidance and help from our TAs.**
+
+To access remotely, **please use `501.gpu.t.tp-tong.xyz` with specified ports**, depending on the machine allocated to you. Please see the internally-shared Google doc or contact the TAs for information. E.g. your username is john, and you've been allocated the server `appleseed`, which in on the port `23333` according to the doc, so you login to the server with:
+
+```shell
+ssh john@501.gpu.t.tp-tong.xyz -p 23333
+```
+
+
+
+#### GPU Server in BIGAI Server Room
+
+We currently have 4 GPU servers in BIGAI Server Room: `snape`, `lupin`, `sirius` and `dobby`.
+
+##### Direct Connection in BIGAI Network
+
+When you're connected to BIGAI's network directly or via BIGAI VPN, you can directly access them with:
 
 ```shell
 ssh USERNAME@HOSTNAME.gpu.t.tp-tong.xyz
 ```
 
-Note that you should change the `USERNAME` and `HOSTNAME` to your account name and the server hostname. E.g. To login to the server `snape` with account `yuyang`, use:
+E.g. to login to `dobby` with username `john`, use:
 
 ```shell
-ssh yuyang@snape.gpu.t.tp-tong.xyz
+ssh john@dobby.gpu.t.tp-tong.xyz
 ```
 
 
 
-#### Cloudflared Tunnel for Remote Connection
+##### Cloudflared Tunnel for Remote Connection
 
-> Note that this method provides temporary access for those with no BIGAI VPNs or are out of the campus.
->
-> Compared to other methods, tt has much higher latency.
+> Note that this method provides temporary access to GPUs in the BIGAI Server Room for those with no BIGAI VPNs. Compared to other methods, it has much higher latency and thus is not suggested.
 
 ##### Installing `cloudflared`
 
